@@ -1,0 +1,13 @@
+{
+  "editor.suggest.localityBonus": true,
+  "editor.suggestSelection": "first",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": false
+  },
+
+  "window.zoomLevel": 0,
+  "terminal.integrated.windowsEnableConpty": false,
+  "terminal.integrated.shellArgs.windows": ["/K", "chcp 65001"]
+}
