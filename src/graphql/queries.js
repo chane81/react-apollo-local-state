@@ -28,3 +28,11 @@ export const SET_TEXT_COLOR_PUSH = gql`
     }
   }
 `;
+
+export const SET_TEXT_COLOR_REMOVE = gql`
+  mutation SetTextColorRemove {
+    setTextColorRemove @client {
+      textColor
+    }
+  }
+`;

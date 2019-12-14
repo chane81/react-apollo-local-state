@@ -8,7 +8,7 @@ import './App.css'
 
 
 /** 쿼리 */
-import { GET_TEXT_COLOR, SET_TEXT_COLOR_UPDATE, SET_TEXT_COLOR_PUSH } from './graphql/queries'
+import { GET_TEXT_COLOR, SET_TEXT_COLOR_UPDATE, SET_TEXT_COLOR_PUSH, SET_TEXT_COLOR_REMOVE } from './graphql/queries'
 
 /** 아폴로 boost 버전 */
 import client from './graphql/clientBoostVersion';
@@ -90,16 +90,19 @@ const TextColorPush = () => {
     variables: {color: data.textColor.value}
   });
 
+  const setTextColorRemove = useMutation(SET_TEXT_COLOR_REMOVE);
+
 
   if (loading) return <span>loading...</span>
   if (error) return <span>error!</span>
 
-
   console.log('data:', data);
+
   return (
     <div>
       <br></br>
       <button onClick={setTextColorPush}>선택한 색상을 상태값 data에 push</button>
+      <button onClick={setTextColorRemove}>마지막 들어간 data remove</button>
       <div>
         {
           data.textColor.values.map((textColor, index) => (
